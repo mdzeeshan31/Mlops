@@ -1,0 +1,9 @@
+2026-05-03 12:10:05,211 - data_preprocessing - ERROR - Unexpected error during preprocessing: name 't' is not defined
+2026-05-03 12:11:23,492 - data_preprocessing - ERROR - Unexpected error during preprocessing: name 't' is not defined
+2026-05-03 12:11:46,696 - data_preprocessing - ERROR - Unexpected error during preprocessing: string indices must be integers, not 'str'
+2026-05-03 12:11:46,696 - data_preprocessing - ERROR - Unexpected error during preprocessing: string indices must be integers, not 'str'
+2026-05-03 12:12:57,219 - data_preprocessing - ERROR - Unexpected error during preprocessing: string indices must be integers, not 'str'
+2026-05-03 12:12:57,220 - data_preprocessing - ERROR - Unexpected error during preprocessing: string indices must be integers, not 'str'
+2026-05-03 12:16:24,781 - data_preprocessing - ERROR - Unexpected error during preprocessing: string indices must be integers, not 'str'
+2026-05-03 12:16:24,781 - data_preprocessing - ERROR - Unexpected error during preprocessing: string indices must be integers, not 'str'
+2026-05-03 12:19:15,936 - data_preprocessing - DEBUG - Train and test data saved to ./data/final\raw
