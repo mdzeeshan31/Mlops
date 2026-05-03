@@ -74,10 +74,11 @@ def save_data(train_data: pd.DataFrame, test_data: pd.DataFrame, data_path: str)
 
 def main():
     try:
-        params = load_params(params_path='params.yaml')
-        test_size = params['data_ingestion']['test_size']
+        #params = load_params(params_path='params.yaml')
+        #test_size = params['data_ingestion']['test_size']
         data_url = 'https://archive.ics.uci.edu/ml/machine-learning-databases/iris/iris.data'
         df = load_data(data_url=data_url)
+        test_size = 0.2
         train_data, test_data = train_test_split(df, test_size=test_size, random_state=2)
         save_data(train_data, test_data, data_path='./data')
     except Exception as e:

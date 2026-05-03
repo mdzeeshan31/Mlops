@@ -41,12 +41,10 @@ logger.addHandler(file_handler)
 #X_train, X_test, y_train, y_test = train_test_split(, y, test_size=0.2, random_state=42)
 
 # Generic function for training + evaluation
-def save_model(model, model_name: str, save_dir: str = r"D:\Projects\models") -> str:
-    os.makedirs(save_dir, exist_ok=True)
-    model_path = os.path.join(save_dir, f"{model_name}.joblib")
+def save_model(model, model_path: str) -> None:
+    os.makedirs(os.path.dirname(model_path), exist_ok=True)
     joblib.dump(model, model_path)
     logger.info(f"Model saved: {model_path}")
-    return model_path
 
 
 def train_and_evaluate(model, X_train: np.ndarray, X_test: np.ndarray, y_train: np.ndarray, y_test: np.ndarray) -> dict:
@@ -89,8 +87,8 @@ def compare_models(models, X_train, X_test, y_train, y_test):
 
 
 def main():
-    train_df = pd.read_csv(r"D:\Projects\src\data\final\raw\train_final.csv")
-    test_df = pd.read_csv(r"D:\Projects\src\data\final\raw\test_final.csv")
+    train_df = pd.read_csv('./data/final/train.csv')
+    test_df = pd.read_csv('./data/final/test.csv')
     X_train = train_df.drop(columns=['target'])
     y_train = train_df['target']
     X_test = test_df.drop(columns=['target'])
@@ -103,20 +101,18 @@ def main():
             SVC()
         ]
 
-        for model in models:
-            result = train_and_evaluate(model, X_train, X_test, y_train, y_test)
-            print(f"{result['model']}: {result['accuracy']:.4f}")
-
         results = compare_models(models, X_train, X_test, y_train, y_test)
         for r in results:
             print(f"{r['model']}: {r['accuracy']:.4f}")
 
-        # Save each trained model so model_evalution.py can load them
-        trained_models = {m.__class__.__name__: m for m in models}
-        for name, model in trained_models.items():
-            save_model(model, name)
+        best_model_name = results[0]['model']
+        best_model = next(m for m in models if m.__class__.__name__ == best_model_name)
+        save_model(best_model, './models/model.pkl')
 
         logger.info("Model training, evaluation and saving completed successfully.")
     except Exception as e:
         logger.error(f"An error occurred in the main train and testing model: {e}")
         raise
+
+if __name__ == "__main__":
+    main()

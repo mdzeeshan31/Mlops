@@ -32,12 +32,12 @@ def preprocess_data(df: pd.DataFrame) -> pd.DataFrame:
     """Preprocess the data."""
     try:
     # Map target labels (optional)
-        df["target"] = df["Species"].map({
+        df["target"] = df["species"].map({
         "Iris-setosa": 0,
         "Iris-versicolor": 1,
         "Iris-virginica": 2
         })
-        drop_columns = ['Id', 'Species']
+        drop_columns = ['Id', 'species']
         df = df.drop(columns=drop_columns, errors='ignore')
         return df
     except KeyError as e:
@@ -49,11 +49,10 @@ def preprocess_data(df: pd.DataFrame) -> pd.DataFrame:
 def save_data(train_data: pd.DataFrame, test_data: pd.DataFrame, data_path: str) -> None:
     """Save the train and test datasets."""
     try:
-        raw_data_path = os.path.join(data_path, 'raw')
-        os.makedirs(raw_data_path, exist_ok=True)
-        train_data.to_csv(os.path.join(raw_data_path, "train_final.csv"), index=False)
-        test_data.to_csv(os.path.join(raw_data_path, "test_final.csv"), index=False)
-        logger.debug('Train and test data saved to %s', raw_data_path)
+        os.makedirs(data_path, exist_ok=True)
+        train_data.to_csv(os.path.join(data_path, "train.csv"), index=False)
+        test_data.to_csv(os.path.join(data_path, "test.csv"), index=False)
+        logger.debug('Train and test data saved to %s', data_path)
     except Exception as e:
         logger.error('Unexpected error occurred while saving the data: %s', e)
         raise
@@ -63,11 +62,8 @@ def save_data(train_data: pd.DataFrame, test_data: pd.DataFrame, data_path: str)
 
 def main():
     try:
-        #params = load_params(params_path='params.yaml')
-        #test_size = params['data_ingestion']['test_size']
-        #test_size = 0.2
-        test_data = pd.read_csv(r"D:\Projects\src\data\raw\test.csv")
-        train_data = pd.read_csv(r"D:\Projects\src\data\raw\train.csv")
+        train_data = pd.read_csv(r'./data/raw/train.csv')
+        test_data = pd.read_csv(r'./data/raw/test.csv')
         train_data = preprocess_data(train_data)
         test_data = preprocess_data(test_data)
         save_data(train_data, test_data, data_path='./data/final')

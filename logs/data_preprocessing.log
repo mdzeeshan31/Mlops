@@ -7,3 +7,7 @@
 2026-05-03 12:16:24,781 - data_preprocessing - ERROR - Unexpected error during preprocessing: string indices must be integers, not 'str'
 2026-05-03 12:16:24,781 - data_preprocessing - ERROR - Unexpected error during preprocessing: string indices must be integers, not 'str'
 2026-05-03 12:19:15,936 - data_preprocessing - DEBUG - Train and test data saved to ./data/final\raw
+2026-05-03 17:14:23,951 - data_preprocessing - ERROR - Missing column in the dataframe: 'Species'
+2026-05-03 17:14:23,952 - data_preprocessing - ERROR - Missing column in the dataframe: 'Species'
+2026-05-03 17:16:53,961 - data_preprocessing - DEBUG - Train and test data saved to ./data/final
+2026-05-03 17:23:09,107 - data_preprocessing - DEBUG - Train and test data saved to ./data/final

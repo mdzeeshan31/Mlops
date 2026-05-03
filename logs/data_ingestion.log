@@ -5,3 +5,16 @@
 2026-05-03 01:09:27,187 - data_ingestion - ERROR - Failed to complete the data ingestion process: 'species'
 2026-05-03 01:10:12,130 - data_ingestion - DEBUG - Data loaded from D:\Projects\Mlops\Iris.csv
 2026-05-03 01:10:12,146 - data_ingestion - DEBUG - Train and test data saved to ./data\raw
+2026-05-03 17:02:20,257 - data_ingestion - ERROR - File not found: params.yaml
+2026-05-03 17:02:20,259 - data_ingestion - ERROR - Failed to complete the data ingestion process: [Errno 2] No such file or directory: 'params.yaml'
+2026-05-03 17:03:35,343 - data_ingestion - ERROR - Failed to complete the data ingestion process: name 'params' is not defined
+2026-05-03 17:04:13,229 - data_ingestion - DEBUG - Data loaded from https://archive.ics.uci.edu/ml/machine-learning-databases/iris/iris.data
+2026-05-03 17:04:13,248 - data_ingestion - DEBUG - Train and test data saved to ./data\raw
+2026-05-03 17:05:05,085 - data_ingestion - DEBUG - Data loaded from https://archive.ics.uci.edu/ml/machine-learning-databases/iris/iris.data
+2026-05-03 17:05:05,098 - data_ingestion - DEBUG - Train and test data saved to ./data\raw
+2026-05-03 17:06:22,530 - data_ingestion - DEBUG - Data loaded from https://archive.ics.uci.edu/ml/machine-learning-databases/iris/iris.data
+2026-05-03 17:06:22,540 - data_ingestion - DEBUG - Train and test data saved to ./data\raw
+2026-05-03 17:08:25,198 - data_ingestion - DEBUG - Data loaded from https://archive.ics.uci.edu/ml/machine-learning-databases/iris/iris.data
+2026-05-03 17:08:25,208 - data_ingestion - DEBUG - Train and test data saved to ./data\raw
+2026-05-03 17:10:07,911 - data_ingestion - DEBUG - Data loaded from https://archive.ics.uci.edu/ml/machine-learning-databases/iris/iris.data
+2026-05-03 17:10:07,922 - data_ingestion - DEBUG - Train and test data saved to ./data\raw

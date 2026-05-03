@@ -1,0 +1,11 @@
+2026-05-03 17:21:10,911 - model_training - ERROR - An error occurred in the main train and testing model: could not convert string to float: 'Iris-virginica'
+2026-05-03 17:23:13,008 - model_training - INFO - RandomForestClassifier: 0.9667
+2026-05-03 17:23:13,008 - model_training - DEBUG - test_prediction is sufficiently accurate:
+2026-05-03 17:23:13,097 - model_training - INFO - LogisticRegression: 0.9667
+2026-05-03 17:23:13,098 - model_training - DEBUG - test_prediction is sufficiently accurate:
+2026-05-03 17:23:13,102 - model_training - INFO - DecisionTreeClassifier: 0.9333
+2026-05-03 17:23:13,103 - model_training - DEBUG - test_prediction is sufficiently accurate:
+2026-05-03 17:23:13,111 - model_training - INFO - SVC: 0.9667
+2026-05-03 17:23:13,111 - model_training - DEBUG - test_prediction is sufficiently accurate:
+2026-05-03 17:23:13,173 - model_training - INFO - Model saved: ./models/model.pkl
+2026-05-03 17:23:13,173 - model_training - INFO - Model training, evaluation and saving completed successfully.

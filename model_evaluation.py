@@ -25,11 +25,7 @@ file_handler.setFormatter(formatter)
 logger.addHandler(console_handler)
 logger.addHandler(file_handler)
 
-MODELS_DIR = r"D:\Projects\models"
-
-
-def load_model(model_name: str, models_dir: str = MODELS_DIR):
-    model_path = os.path.join(models_dir, f"{model_name}.joblib")
+def load_model(model_path: str):
     if not os.path.exists(model_path):
         raise FileNotFoundError(f"Model file not found: {model_path}. Run model_training.py first.")
     model = joblib.load(model_path)
@@ -56,32 +52,24 @@ def evaluate_model(model, X_test: np.ndarray, y_test: np.ndarray) -> dict:
 
 
 def main():
-    test_df = pd.read_csv(r"D:\Projects\src\data\final\raw\test_final.csv")
+    test_df = pd.read_csv('./data/final/test.csv')
     X_test = test_df.drop(columns=['target'])
     y_test = test_df['target']
 
-    model_names = [
-        "RandomForestClassifier",
-        "LogisticRegression",
-        "DecisionTreeClassifier",
-        "SVC",
-    ]
+    model = load_model('./models/model.pkl')
+    result = evaluate_model(model, X_test, y_test)
 
-    results = []
-    for name in model_names:
-        try:
-            model = load_model(name)
-            result = evaluate_model(model, X_test, y_test)
-            results.append(result)
-            print(f"\n{result['model']} — Accuracy: {result['accuracy']:.4f}")
-            print(result['classification_report'])
-        except FileNotFoundError as e:
-            logger.warning(str(e))
+    output = (
+        f"Model: {result['model']}\n"
+        f"Accuracy: {result['accuracy']:.4f}\n\n"
+        f"{result['classification_report']}"
+    )
+    print(output)
 
-    if results:
-        best = max(results, key=lambda r: r["accuracy"])
-        print(f"\nBest model: {best['model']} ({best['accuracy']:.4f})")
-        logger.info(f"Evaluation complete. Best model: {best['model']} ({best['accuracy']:.4f})")
+    os.makedirs('reports', exist_ok=True)
+    with open('reports/evaluation.txt', 'w') as f:
+        f.write(output)
+    logger.info(f"Evaluation complete. Accuracy: {result['accuracy']:.4f}")
 
 
 if __name__ == "__main__":

@@ -1,36 +1,36 @@
 stages:
   data_ingestion:
-    cmd: python src/data_ingestion.py
+    cmd: python data_ingestion.py
     deps:
-      - src/data_ingestion.py
+      - data_ingestion.py
       #- src/data_preprocessing.py
-      - params.yaml
+      #- params.yaml
     outs:
-      - data/train.csv
-      - data/test.csv
+      - data/raw/train.csv
+      - data/raw/test.csv
 
   data_preprocessing:
-    cmd: python src/data_preprocessing.py
+    cmd: python data_preprocessing.py
     deps:
-      - src/data_preprocessing.py
-      - data/train.csv
-      - data/test.csv
+      - data_preprocessing.py
+      - data/raw/train.csv
+      - data/raw/test.csv
     outs:
       - data/final/train.csv
       - data/final/test.csv
   
   model_training:
-    cmd: python src/model_training.py
+    cmd: python model_training.py
     deps:
-      - src/model_training.py
+      - model_training.py
       - data/final/train.csv
     outs:
       - models/model.pkl
   
   model_evaluation:
-    cmd: python src/model_evaluation.py
+    cmd: python model_evaluation.py
     deps:
-      - src/model_evaluation.py
+      - model_evaluation.py
       - models/model.pkl
       - data/final/test.csv
     outs:
