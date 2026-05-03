@@ -9,3 +9,23 @@
 2026-05-03 17:23:13,111 - model_training - DEBUG - test_prediction is sufficiently accurate:
 2026-05-03 17:23:13,173 - model_training - INFO - Model saved: ./models/model.pkl
 2026-05-03 17:23:13,173 - model_training - INFO - Model training, evaluation and saving completed successfully.
+2026-05-03 17:52:28,013 - model_training - INFO - RandomForestClassifier: 0.9667
+2026-05-03 17:52:28,013 - model_training - DEBUG - test_prediction is sufficiently accurate:
+2026-05-03 17:52:28,101 - model_training - INFO - LogisticRegression: 0.9667
+2026-05-03 17:52:28,101 - model_training - DEBUG - test_prediction is sufficiently accurate:
+2026-05-03 17:52:28,107 - model_training - INFO - DecisionTreeClassifier: 0.9333
+2026-05-03 17:52:28,107 - model_training - DEBUG - test_prediction is sufficiently accurate:
+2026-05-03 17:52:28,114 - model_training - INFO - SVC: 0.9667
+2026-05-03 17:52:28,114 - model_training - DEBUG - test_prediction is sufficiently accurate:
+2026-05-03 17:52:28,174 - model_training - INFO - Model saved: ./models/model.pkl
+2026-05-03 17:52:28,175 - model_training - INFO - Model training, evaluation and saving completed successfully.
+2026-05-03 17:54:08,039 - model_training - INFO - RandomForestClassifier: 0.9667
+2026-05-03 17:54:08,040 - model_training - DEBUG - test_prediction is sufficiently accurate:
+2026-05-03 17:54:08,195 - model_training - INFO - LogisticRegression: 0.9667
+2026-05-03 17:54:08,195 - model_training - DEBUG - test_prediction is sufficiently accurate:
+2026-05-03 17:54:08,202 - model_training - INFO - DecisionTreeClassifier: 0.9333
+2026-05-03 17:54:08,202 - model_training - DEBUG - test_prediction is sufficiently accurate:
+2026-05-03 17:54:08,213 - model_training - INFO - SVC: 0.9667
+2026-05-03 17:54:08,213 - model_training - DEBUG - test_prediction is sufficiently accurate:
+2026-05-03 17:54:08,284 - model_training - INFO - Model saved: ./models/model.pkl
+2026-05-03 17:54:08,284 - model_training - INFO - Model training, evaluation and saving completed successfully.

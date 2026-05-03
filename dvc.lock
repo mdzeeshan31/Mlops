@@ -49,8 +49,18 @@ stages:
       size: 2338
     - path: model_training.py
       hash: md5
-      md5: 7d31a5bc13e6a41f99e9cd8a38911875
-      size: 3819
+      md5: 546377c3b78d35c4867cc2a75db90001
+      size: 3762
+    params:
+      params.yaml:
+        model_training:
+          random_forest:
+            n_estimators: 100
+            random_state: 42
+          logistic_regression:
+            max_iter: 200
+          decision_tree:
+            random_state: 42
     outs:
     - path: models/model.pkl
       hash: md5
