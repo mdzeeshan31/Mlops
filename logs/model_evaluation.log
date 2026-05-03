@@ -16,3 +16,8 @@
 2026-05-03 18:27:52,156 - model_evaluation - INFO - Starting model evaluation and logging with dvclive.
 2026-05-03 18:27:54,443 - model_evaluation - INFO - ending model evaluation and logging with dvclive.
 2026-05-03 18:27:54,445 - model_evaluation - INFO - Evaluation complete. Accuracy: 0.9667
+2026-05-03 18:33:22,391 - model_evaluation - INFO - Loaded model: ./models/model.pkl
+2026-05-03 18:33:22,410 - model_evaluation - INFO - LogisticRegression accuracy: 1.0000
+2026-05-03 18:33:22,410 - model_evaluation - INFO - Starting model evaluation and logging with dvclive.
+2026-05-03 18:33:24,725 - model_evaluation - INFO - ending model evaluation and logging with dvclive.
+2026-05-03 18:33:24,728 - model_evaluation - INFO - Evaluation complete. Accuracy: 1.0000

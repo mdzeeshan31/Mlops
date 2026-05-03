@@ -29,3 +29,13 @@
 2026-05-03 17:54:08,213 - model_training - DEBUG - test_prediction is sufficiently accurate:
 2026-05-03 17:54:08,284 - model_training - INFO - Model saved: ./models/model.pkl
 2026-05-03 17:54:08,284 - model_training - INFO - Model training, evaluation and saving completed successfully.
+2026-05-03 18:33:17,533 - model_training - INFO - RandomForestClassifier: 0.9667
+2026-05-03 18:33:17,533 - model_training - DEBUG - test_prediction is sufficiently accurate:
+2026-05-03 18:33:17,620 - model_training - INFO - LogisticRegression: 1.0000
+2026-05-03 18:33:17,621 - model_training - DEBUG - test_prediction is sufficiently accurate:
+2026-05-03 18:33:17,627 - model_training - INFO - DecisionTreeClassifier: 0.9333
+2026-05-03 18:33:17,627 - model_training - DEBUG - test_prediction is sufficiently accurate:
+2026-05-03 18:33:17,635 - model_training - INFO - SVC: 0.9667
+2026-05-03 18:33:17,635 - model_training - DEBUG - test_prediction is sufficiently accurate:
+2026-05-03 18:33:17,639 - model_training - INFO - Model saved: ./models/model.pkl
+2026-05-03 18:33:17,639 - model_training - INFO - Model training, evaluation and saving completed successfully.

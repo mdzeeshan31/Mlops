@@ -1,8 +1,8 @@
 model_training:
   random_forest:
-    n_estimators: 100
-    random_state: 42
+    n_estimators: 50
+    random_state: 20
   logistic_regression:
-    max_iter: 200
+    max_iter: 20
   decision_tree:
     random_state: 42

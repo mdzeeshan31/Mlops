@@ -1,1 +1,1 @@
-model: RandomForestClassifier
+model: LogisticRegression

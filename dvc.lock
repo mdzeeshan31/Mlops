@@ -55,17 +55,17 @@ stages:
       params.yaml:
         model_training:
           random_forest:
-            n_estimators: 100
-            random_state: 42
+            n_estimators: 50
+            random_state: 20
           logistic_regression:
-            max_iter: 200
+            max_iter: 20
           decision_tree:
             random_state: 42
     outs:
     - path: models/model.pkl
       hash: md5
-      md5: 3761783cd7e16689a8b1ccc74f262d2f
-      size: 178753
+      md5: c021bf4887848a17adc0dc4cc4579b40
+      size: 1295
   model_evaluation:
     cmd: python model_evaluation.py
     deps:
@@ -79,10 +79,10 @@ stages:
       size: 2939
     - path: models/model.pkl
       hash: md5
-      md5: 3761783cd7e16689a8b1ccc74f262d2f
-      size: 178753
+      md5: c021bf4887848a17adc0dc4cc4579b40
+      size: 1295
     outs:
     - path: reports/evaluation.txt
       hash: md5
-      md5: c3a68888308d3d763ee8cfae49d90a01
-      size: 440
+      md5: 565c8e693c149f75e6e003af9917cce3
+      size: 436
