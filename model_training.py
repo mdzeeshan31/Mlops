@@ -1,17 +1,14 @@
-#from sklearn.datasets import load_iris
-from sklearn.model_selection import train_test_split
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.metrics import accuracy_score, classification_report
-import pandas as pd 
-import numpy as np
-import joblib
-from sklearn.ensemble import RandomForestClassifier
 from sklearn.linear_model import LogisticRegression
 from sklearn.tree import DecisionTreeClassifier
 from sklearn.svm import SVC
+import pandas as pd
+import numpy as np
+import joblib
+import yaml
 import os
 import logging
-#from data_ingestion import load_data
 
 
 # Ensure the "logs" directory exists
@@ -87,6 +84,9 @@ def compare_models(models, X_train, X_test, y_train, y_test):
 
 
 def main():
+    with open('params.yaml', 'r') as f:
+        params = yaml.safe_load(f)['model_training']
+
     train_df = pd.read_csv('./data/final/train.csv')
     test_df = pd.read_csv('./data/final/test.csv')
     X_train = train_df.drop(columns=['target'])
@@ -95,9 +95,9 @@ def main():
     y_test = test_df['target']
     try:
         models = [
-            RandomForestClassifier(n_estimators=100, random_state=42),
-            LogisticRegression(max_iter=200),
-            DecisionTreeClassifier(random_state=42),
+            RandomForestClassifier(**params['random_forest']),
+            LogisticRegression(**params['logistic_regression']),
+            DecisionTreeClassifier(**params['decision_tree']),
             SVC()
         ]
 

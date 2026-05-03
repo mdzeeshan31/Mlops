@@ -24,6 +24,9 @@ stages:
     deps:
       - model_training.py
       - data/final/train.csv
+    params:
+      - params.yaml:
+          - model_training
     outs:
       - models/model.pkl
   
