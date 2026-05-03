@@ -1,3 +1,18 @@
 2026-05-03 17:28:02,379 - model_evaluation - INFO - Loaded model: ./models/model.pkl
 2026-05-03 17:28:02,416 - model_evaluation - INFO - RandomForestClassifier accuracy: 0.9667
 2026-05-03 17:28:02,418 - model_evaluation - INFO - Evaluation complete. Accuracy: 0.9667
+2026-05-03 18:16:39,511 - model_evaluation - INFO - Loaded model: ./models/model.pkl
+2026-05-03 18:16:39,567 - model_evaluation - INFO - RandomForestClassifier accuracy: 0.9667
+2026-05-03 18:18:00,134 - model_evaluation - INFO - Loaded model: ./models/model.pkl
+2026-05-03 18:18:00,165 - model_evaluation - INFO - RandomForestClassifier accuracy: 0.9667
+2026-05-03 18:18:02,503 - model_evaluation - INFO - Evaluation complete. Accuracy: 0.9667
+2026-05-03 18:19:06,890 - model_evaluation - INFO - Loaded model: ./models/model.pkl
+2026-05-03 18:19:06,922 - model_evaluation - INFO - RandomForestClassifier accuracy: 0.9667
+2026-05-03 18:19:06,923 - model_evaluation - INFO - Starting model evaluation and logging with dvclive.
+2026-05-03 18:19:09,183 - model_evaluation - INFO - ending model evaluation and logging with dvclive.
+2026-05-03 18:19:09,185 - model_evaluation - INFO - Evaluation complete. Accuracy: 0.9667
+2026-05-03 18:27:52,124 - model_evaluation - INFO - Loaded model: ./models/model.pkl
+2026-05-03 18:27:52,155 - model_evaluation - INFO - RandomForestClassifier accuracy: 0.9667
+2026-05-03 18:27:52,156 - model_evaluation - INFO - Starting model evaluation and logging with dvclive.
+2026-05-03 18:27:54,443 - model_evaluation - INFO - ending model evaluation and logging with dvclive.
+2026-05-03 18:27:54,445 - model_evaluation - INFO - Evaluation complete. Accuracy: 0.9667

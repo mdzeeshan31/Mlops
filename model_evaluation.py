@@ -4,6 +4,8 @@ import numpy as np
 import joblib
 import os
 import logging
+from dvclive import Live
+import yaml
 
 log_dir = 'logs'
 os.makedirs(log_dir, exist_ok=True)
@@ -56,14 +58,24 @@ def main():
     X_test = test_df.drop(columns=['target'])
     y_test = test_df['target']
 
-    model = load_model('./models/model.pkl')
+    model_path = './models/model.pkl'
+    model = load_model(model_path)
     result = evaluate_model(model, X_test, y_test)
-
+    # experiement tracking with dvclive
+    logger.info("Starting model evaluation and logging with dvclive.")
+    with Live(save_dvc_exp=True) as live:
+        live.log_param("model", result['model'])
+        live.log_metric("accuracy", result['accuracy'])
+        with open("classification_report.txt", "w") as f:
+            f.write(result['classification_report'])
+        live.log_artifact("classification_report.txt")
+        live.log_artifact(model_path, type="model")
+    logger.info("ending model evaluation and logging with dvclive.")
     output = (
-        f"Model: {result['model']}\n"
-        f"Accuracy: {result['accuracy']:.4f}\n\n"
-        f"{result['classification_report']}"
-    )
+            f"Model: {result['model']}\n"
+            f"Accuracy: {result['accuracy']:.4f}\n\n"
+            f"{result['classification_report']}"
+     )
     print(output)
 
     os.makedirs('reports', exist_ok=True)

@@ -75,8 +75,8 @@ stages:
       size: 628
     - path: model_evaluation.py
       hash: md5
-      md5: 5f7f7914fbc56c93ca4ed6904be861c7
-      size: 2229
+      md5: afdd6d9dd5adeb3571939d00cf968812
+      size: 2939
     - path: models/model.pkl
       hash: md5
       md5: 3761783cd7e16689a8b1ccc74f262d2f

@@ -2,39 +2,50 @@ stages:
   data_ingestion:
     cmd: python data_ingestion.py
     deps:
-      - data_ingestion.py
+    - data_ingestion.py
       #- src/data_preprocessing.py
       #- params.yaml
     outs:
-      - data/raw/train.csv
-      - data/raw/test.csv
+    - data/raw/train.csv
+    - data/raw/test.csv
 
   data_preprocessing:
     cmd: python data_preprocessing.py
     deps:
-      - data_preprocessing.py
-      - data/raw/train.csv
-      - data/raw/test.csv
+    - data_preprocessing.py
+    - data/raw/train.csv
+    - data/raw/test.csv
     outs:
-      - data/final/train.csv
-      - data/final/test.csv
-  
+    - data/final/train.csv
+    - data/final/test.csv
+
   model_training:
     cmd: python model_training.py
     deps:
-      - model_training.py
-      - data/final/train.csv
+    - model_training.py
+    - data/final/train.csv
     params:
-      - params.yaml:
-          - model_training
+    - params.yaml:
+      - model_training
     outs:
-      - models/model.pkl
-  
+    - models/model.pkl
+
   model_evaluation:
     cmd: python model_evaluation.py
     deps:
-      - model_evaluation.py
-      - models/model.pkl
-      - data/final/test.csv
+    - model_evaluation.py
+    - models/model.pkl
+    - data/final/test.csv
     outs:
-      - reports/evaluation.txt
+    - reports/evaluation.txt
+metrics:
+- dvclive/metrics.json
+plots:
+- dvclive/plots/metrics:
+    x: step
+artifacts:
+  model:
+    path: models/model.pkl
+    type: model
+params:
+- dvclive/params.yaml
